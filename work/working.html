@@ -7,37 +7,28 @@
      <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
     <title>Regisration </title>
-    <style>
-        #termsonly{
-            color: red;
-        }
-        row{
-            background-color:bisque;
-        }
-    
-    </style>
 </head>
 <body>
    
     <div class="container">
        <div class="webse">
-           <h3>Web Security Competition</h3>
        </div>
        <div class="Regpage">
            <h4>Registration page</h4>
        </div>
-       <div class="row">
+       <div class="row justify-content-around">
+         <div class="col-md-8 align-items-center">
           <fieldset>
-           <form name="myForm" method="post" action="success.html" onsubmit="return check();">
+           <form name="myForm" action="success.html" onsubmit="return check();">
                <table>
                    <tr>
-                       <td>Name</td><td>:</td><td><input type="text" name="Name" placeholder="Name" onChange="checkname()"></td>
+                       <td>Name</td><td>:</td><td><input type="text" name="Name" placeholder="Name" onChange="checkname()"><img id="pic"><div id="msg"></div></td>
                    </tr>
                    <tr>
                        <td>Gender</td><td>:</td><td><input type="radio" name="gender" value="Male">Male <input id="Female" type="radio" name="gender" value="Female" required>Female</td>
                    </tr>
                    <tr>
-                       <td>Date of Birth</td><td>:</td><td><input type="date" name="DoB" id="DoB" required></td>
+                       <td>Date of Birth</td><td>:</td><td><input type="date" name="DoB" id="DoB" min="1990-01-01" max="2015-12-31"required></td>
                    </tr>
                    <tr>
                        <td>Country</td><td>:</td><td>
@@ -54,19 +45,19 @@
                    </tr>
                    
                    <tr>
-                       <td>Mobile</td><td> : </td><td><input id="mobile" type="tel" name="mobile" placeholder="Number required" onChange="checkmob()"></td>
+                       <td>Mobile</td><td> : </td><td><input id="mobile" type="tel" name="mobile" placeholder="Number required" onChange="checkmob()"><img id="pic1"><div id="msg1"></div></td>
                    </tr>
                    
                    <tr>
-                       <td>UserName</td><td> : </td><td><input id="Username" type="text" name="UserName" placeholder="Enter UserName" required onChange="checkusername()"></td>
+                       <td>UserName</td><td> : </td><td><input id="Username" type="text" name="UserName" placeholder="Enter UserName" required onChange="checkusername()"><img id="pic2"><div id="msg2"></div></td>
                    </tr>
                    
                    <tr>
-                       <td>Password</td><td> : </td><td><input type="password" name="password1" placeholder="Enter password" id="pass1" required onChange="checkpass()"></td>
+                       <td>Password</td><td> : </td><td><input type="password" name="password1" placeholder="Enter password" id="pass1" required onChange="checkpass()"><img id="pic3"><div id="msg3"></div></td>
                    </tr>
                    
                    <tr>
-                       <td>Confirm Password</td><td> : </td><td><input id="pass2" type="password" name="password2" placeholder="Confirm password" required onChange="confirmpass()"></td>
+                       <td>Confirm Password</td><td> : </td><td><input id="pass2" type="password" name="password2" placeholder="Confirm password" required onChange="confirmpass()"><img id="pic4"><img id="pic"><div id="msg4"></div></td>
                    </tr>
                    
                    <tr>
@@ -81,10 +72,10 @@
                    
                    <tr>
                        <td>
-                           <button type="submit" class="btn btn-primary btn-sm" name="submit">Submit</button>
+                           <button type="submit" class="btn btn-success btn-md" name="submit">Submit</button>
                            </td>
                            <td>
-                           <button type="reset" class="btn btn-success btn-sm" name="reset">reset</button>
+                           <button type="reset" class="btn btn-primary btn-md" name="reset">reset</button>
                        </td>
                    </tr>
                       <tr>
@@ -106,59 +97,9 @@
                
            </form>
            </fieldset>
+           </div>
        </div>
     </div>   
-
-
-    <script>
-        function check(){
-            var name = document.myForm.Name.value;
-            var mobile = document.myForm.mobile.value;
-            var username = document.myForm.UserName.value;
-            var pass1 = document.myForm.password1.value;
-            var pass2 = document.myForm.password2.value;
-            
-          if(name != name.match(/^[a-zA-Z]+$/)){
-              alert("name must only contain characters");
-              return false;
-          }
-            else if(name.length > 20){
-              alert("Name must not be greater than 20 characters");
-              return false;
-          }
-            else if(mobile.length >10){
-              alert("Number must only have 10 digits");
-              return false;
-          }
-            else if(username != username.match(/^[a-zA-Z0-9]+$/)){
-              alert("Your Username must only contain letters and digits");
-              return false;
-          }
-            else if(pass1 != pass1.match(/^[a-zA-Z0-9]+$/) ){
-              alert("Your password should only contain numbers and letters");
-              return false;
-          }
-            else if(pass1.length < 8){
-              alert("Your password should be greater than 8 characters");
-              return false;
-          }
-            else if(pass1.length > 20){
-              alert("Your Password should be less than 20 characters");
-              return false;
-          }
-            else if(pass2 !== pass1 ){
-              alert("Your Passwords must match");
-              return false;
-          }
-        }
-    
-
-    </script>
-
-
-
-
-
     <script src="Jqueries/js/bootstrap.min.js"></script>
     <script src="Jqueries/jquery-1.7.2.min.js"></script>
 </body>

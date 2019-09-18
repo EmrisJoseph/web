@@ -1,6 +1,6 @@
 .container{
     font-family: cursive;
-    font-size: 13px;
+    font-size: 1.5ems;
 }
 
 .webse{
@@ -9,9 +9,15 @@
     text-decoration: underline;
 }
 form{
-    
+    align-content: center;
 }
 .Regpage{
     color: red;
     text-align: center;
+}
+#msg,#msg1,#msg2,#msg3,#msg4{
+    color: red;
+}
+.button, input, select[multiple], textarea {
+    background-image: none;
 }

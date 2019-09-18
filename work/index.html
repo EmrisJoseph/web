@@ -31,7 +31,7 @@
            <form name="myForm" action="success.html">
                <table>
                    <tr>
-                       <td>Name</td><td>:</td><td><input type="text" name="Name" placeholder="Name" onChange="checkname()"></td>
+                       <td>Name</td><td>:</td><td><input type="text" name="Name" placeholder="Name" onChange="checkname()"><img id="pic"></td>
                    </tr>
                    <tr>
                        <td>Gender</td><td>:</td><td><input type="radio" name="gender" value="Male">Male <input id="Female" type="radio" name="gender" value="Female" required>Female</td>
@@ -122,6 +122,8 @@
                      return false;
                  }
              }else{
+                 document.getElementById("pic").src="images/error.jpg";
+                 document.getElementById("pic").style.height='15px';
                  alert("Name must be Characters");
                  return false;
              }
