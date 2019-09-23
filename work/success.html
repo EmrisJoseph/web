@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Success </title>
+    <script>
+       function display(){
+           if(('localStorage' in window) && window['localStorage'] !== null ){
+           var name =  localStorage.getItem('username');
+           document.getElementById('show').innerHTML = "<br>" + name + ' was registered successfully';    
+        }else{
+             alert("No name was set since your browser doesnt support localstorage");
+        }
+}
+
+    </script>
 </head>
-<body>
+<body onload="display()">
    
-   <p> User has been registered</p>
+<p id="show"></p>
     
 </body>
 </html>
